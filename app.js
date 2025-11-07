@@ -55,7 +55,7 @@ function init() {
     
     // Load font for text
     const loader = new FontLoader();
-    loader.load('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/fonts/helvetiker_bold.typeface.json', function(loadedFont) {
+    loader.load('./node_modules/three/examples/fonts/helvetiker_bold.typeface.json', function(loadedFont) {
         font = loadedFont;
         console.log('Font loaded successfully');
     });
@@ -281,9 +281,6 @@ function exportSTL() {
     trophy.children.forEach(child => {
         if (child instanceof THREE.Mesh) {
             const clonedMesh = child.clone();
-            clonedMesh.position.copy(child.getWorldPosition(new THREE.Vector3()));
-            clonedMesh.rotation.copy(child.getWorldRotation(new THREE.Euler()));
-            clonedMesh.scale.copy(child.getWorldScale(new THREE.Vector3()));
             exportGroup.add(clonedMesh);
         }
     });
