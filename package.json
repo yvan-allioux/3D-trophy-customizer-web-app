@@ -1,0 +1,15 @@
+{
+  "name": "3d-trophy-customizer-web-app",
+  "version": "1.0.0",
+  "description": "This project is a web application that allows users to customize a 3D trophy model by adding text, then generate and download an STL file ready for 3D printing, directly from their browser.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.160.0"
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Trophy Customizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>3D Trophy Customizer</h1>
+        
+        <div id="canvas-container"></div>
+        
+        <div id="controls">
+            <div class="control-section">
+                <h2>Text Settings</h2>
+                <div class="control-group">
+                    <label for="text-input">Text:</label>
+                    <input type="text" id="text-input" placeholder="Enter your text" maxlength="20">
+                    <button id="add-text">Add Text</button>
+                </div>
+                
+                <div class="control-group">
+                    <label for="font-size">Font Size:</label>
+                    <input type="range" id="font-size" min="0.1" max="2" step="0.1" value="0.5">
+                    <span id="font-size-value">0.5</span>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <h2>Position</h2>
+                <div class="control-group">
+                    <label for="pos-x">X:</label>
+                    <input type="range" id="pos-x" min="-5" max="5" step="0.1" value="0">
+                    <span id="pos-x-value">0</span>
+                </div>
+                <div class="control-group">
+                    <label for="pos-y">Y:</label>
+                    <input type="range" id="pos-y" min="-5" max="5" step="0.1" value="2">
+                    <span id="pos-y-value">2</span>
+                </div>
+                <div class="control-group">
+                    <label for="pos-z">Z:</label>
+                    <input type="range" id="pos-z" min="-5" max="5" step="0.1" value="0">
+                    <span id="pos-z-value">0</span>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <h2>Rotation</h2>
+                <div class="control-group">
+                    <label for="rot-x">X:</label>
+                    <input type="range" id="rot-x" min="0" max="6.28" step="0.1" value="0">
+                    <span id="rot-x-value">0</span>
+                </div>
+                <div class="control-group">
+                    <label for="rot-y">Y:</label>
+                    <input type="range" id="rot-y" min="0" max="6.28" step="0.1" value="0">
+                    <span id="rot-y-value">0</span>
+                </div>
+                <div class="control-group">
+                    <label for="rot-z">Z:</label>
+                    <input type="range" id="rot-z" min="0" max="6.28" step="0.1" value="0">
+                    <span id="rot-z-value">0</span>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <button id="export-stl" class="export-button">Export STL</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./node_modules/three/build/three.module.js",
+            "three/addons/": "./node_modules/three/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
