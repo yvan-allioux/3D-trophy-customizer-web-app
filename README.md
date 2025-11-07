@@ -14,9 +14,13 @@ This project is a web application that allows users to customize a 3D trophy mod
 
 ## Technologies Used
 
-- **Three.js** - 3D graphics library for rendering and manipulation
+- **Three.js** (v0.160.0) - 3D graphics library loaded from jsDelivr CDN
 - **HTML5/CSS3** - Modern web interface
 - **JavaScript (ES6 modules)** - Application logic
+
+## Installation
+
+No installation required! The application uses Three.js from a CDN, so you can run it directly by opening `index.html` or deploying it to any static hosting service like GitHub Pages.
 
 ## How to Use
 
@@ -36,13 +40,16 @@ This project is a web application that allows users to customize a 3D trophy mod
 
 ## Running the Application
 
-This is a static web application that runs entirely in the browser. You can run it in several ways:
+This is a static web application that runs entirely in the browser using Three.js from a CDN. No installation or build step is required.
 
-### Option 1: Direct File Opening
-Simply open the `index.html` file in a web browser.
+### Option 1: GitHub Pages (Easiest)
+Visit the live demo at: https://yvan-allioux.github.io/3D-trophy-customizer-web-app/
 
-### Option 2: Local Web Server (Recommended)
-For the best experience, serve the files using a local web server:
+### Option 2: Direct File Opening
+Simply open the `index.html` file in a modern web browser.
+
+### Option 3: Local Web Server (Recommended for Development)
+For the best development experience, serve the files using a local web server:
 
 ```bash
 # Using Python 3
@@ -73,11 +80,15 @@ Recommended browsers:
 
 ```
 3D-trophy-customizer-web-app/
-├── index.html          # Main HTML file
+├── index.html          # Main HTML file with CDN import maps
 ├── style.css           # Styling and layout
 ├── app.js              # Three.js application logic
+├── fonts/              # Font files for 3D text
+│   └── helvetiker_bold.typeface.json
 └── README.md           # Documentation
 ```
+
+**Note:** The `node_modules` and `package.json` files are optional and only needed for local development if you want to use a local copy of Three.js instead of the CDN.
 
 ## Credits
 
