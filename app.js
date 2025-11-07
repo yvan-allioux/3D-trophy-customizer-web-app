@@ -16,9 +16,10 @@ function init() {
     scene.background = new THREE.Color(0xf0f0f0);
     
     // Create camera
+    const container = document.getElementById('canvas-container');
     camera = new THREE.PerspectiveCamera(
         75,
-        window.innerWidth / window.innerHeight,
+        container.clientWidth / container.clientHeight,
         0.1,
         1000
     );
@@ -26,7 +27,6 @@ function init() {
     camera.lookAt(0, 0, 0);
     
     // Create renderer
-    const container = document.getElementById('canvas-container');
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.shadowMap.enabled = true;
@@ -55,7 +55,7 @@ function init() {
     
     // Load font for text
     const loader = new FontLoader();
-    loader.load('./node_modules/three/examples/fonts/helvetiker_bold.typeface.json', function(loadedFont) {
+    loader.load('./fonts/helvetiker_bold.typeface.json', function(loadedFont) {
         font = loadedFont;
         console.log('Font loaded successfully');
     });
@@ -292,10 +292,10 @@ function exportSTL() {
     }
     
     // Export to STL
-    const stlString = exporter.parse(exportGroup, { binary: false });
+    const stlString = exporter.parse(exportGroup, { binary: true });
     
     // Download the file
-    const blob = new Blob([stlString], { type: 'text/plain' });
+    const blob = new Blob([stlString], { type: 'application/octet-stream' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = 'trophy.stl';
